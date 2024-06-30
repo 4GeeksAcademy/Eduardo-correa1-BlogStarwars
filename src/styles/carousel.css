@@ -1,0 +1,20 @@
+.carousel-container {
+  overflow-x: auto; /* Permite el desplazamiento horizontal */
+  white-space: nowrap; /* Evita que las tarjetas se envuelvan a la siguiente línea */
+  width: 100%; /* Ajusta el ancho del contenedor */
+}
+
+.cards-wrapper {
+  display: inline-flex; /* Alinea las tarjetas en una fila */
+}
+
+.card {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-right: 10px; /* Espacio entre tarjetas */
+  flex: 0 0 auto; /* Evita que las tarjetas se estiren */
+  width: 200px; /* Ancho fijo para cada tarjeta */
+  box-sizing: border-box; /* Incluye el padding y el border en el ancho y alto de la tarjeta */
+}
