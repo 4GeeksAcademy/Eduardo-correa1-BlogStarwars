@@ -26,6 +26,16 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.error("Error fetching the data", error);
         }
       },
+      loadVh: async () => {
+        try {
+          const response = await fetch("https://www.swapi.tech/api/vehicles/");
+          const data = await response.json();
+          setStore({ vehicles: data.results });
+          console.log(data.results);
+        } catch (error) {
+          console.error("Error fetching the data", error);
+        }
+      },
     },
   };
 };
