@@ -22,7 +22,8 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			state.actions.loadCards();
+			state.actions.loadChars();
+			state.actions.loadPlanets();
         }, []);
 		
 

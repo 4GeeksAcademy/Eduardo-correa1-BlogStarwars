@@ -1,15 +1,27 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      cards: [],
+      chars: [],
+      planets: [],
+      vehicles: [],
     },
     actions: {
-      loadCards: async () => {
+      loadChars: async () => {
         try {
           const response = await fetch("https://www.swapi.tech/api/people/");
           const data = await response.json();
-          setStore({ cards: data });
-		  console.log(data)
+          setStore({ chars: data.results });
+          console.log(data.results);
+        } catch (error) {
+          console.error("Error fetching the data", error);
+        }
+      },
+      loadPlanets: async () => {
+        try {
+          const response = await fetch("https://www.swapi.tech/api/planets/");
+          const data = await response.json();
+          setStore({ planets: data.results });
+          console.log(data.results);
         } catch (error) {
           console.error("Error fetching the data", error);
         }
