@@ -13,8 +13,7 @@
   min-width: 300px;
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
-  
-}
+  }
 .card img {
   
   height: 300px;
@@ -24,6 +23,10 @@
   margin-left: auto;
   margin-right: auto
 }
-
+.card button{
+  width: 50%;
+  margin: auto;
+  margin-bottom: 3px;
+}
 
 

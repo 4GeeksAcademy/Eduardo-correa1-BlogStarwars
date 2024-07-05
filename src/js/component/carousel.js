@@ -52,6 +52,7 @@ const Carousel = () => {
             key={character.uid}
             character={character}
             imageUrl={imagecharacters[character.uid]}
+            type="character"
           />
         ))}
       </div>
@@ -61,6 +62,7 @@ const Carousel = () => {
             key={character.uid}
             character={character}
             imageUrl={imageplanets[character.uid]}
+            type="planet"
           />
         ))}
       </div>
@@ -70,6 +72,7 @@ const Carousel = () => {
             key={character.uid}
             character={character}
             imageUrl={imageVh[character.uid]}
+            type="vehicle"
           />
         ))}
       </div>
