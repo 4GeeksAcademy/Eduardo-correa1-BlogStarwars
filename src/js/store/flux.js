@@ -36,6 +36,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.error("Error fetching the data", error);
         }
       },
+      loadSingleChar: async () => {
+        
+      }
     },
   };
 };

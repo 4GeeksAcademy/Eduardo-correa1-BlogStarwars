@@ -5,7 +5,7 @@ const Card = ({character, imageUrl}) => {
         <div className="card">
             <img src={imageUrl} alt={character.name} />
             <h2>{character.name}</h2>
-            <p>UID: {character.uid}</p>
+            
             
 
         </div>

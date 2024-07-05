@@ -1,18 +1,29 @@
 .carousel{
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  justify-items: center;
+  scroll-snap-type: x mandatory; 
 }
 
 .card {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  margin: 10px;
-  padding: 20 px;
+  flex: 0 0 auto;  
+  margin: 10px;  
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  min-width: 200px;
+  min-width: 300px;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  
 }
+.card img {
+  
+  height: 300px;
+  width: 200px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+
 
