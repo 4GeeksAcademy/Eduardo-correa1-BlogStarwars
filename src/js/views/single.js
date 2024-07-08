@@ -4,41 +4,50 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Single = () => {
-	const { store } = useContext(Context);
+	const { store, actions } = useContext(Context);
 	const { type, theid } = useParams();
 	const [item, setItem] = useState(null);
 	const [imageUrl, setImageUrl] = useState("");
   
 	useEffect(() => {
-	  let selectedItem;
-	  let image;
-  
-	  if (type === "character") {
-		selectedItem = store.chars.find((char) => char.uid === theid);
-		image = `https://starwars-visualguide.com/assets/img/characters/${theid}.jpg`;
-	  } else if (type === "planet") {
-		selectedItem = store.planets.find((planet) => planet.uid === theid);
-		image = `https://starwars-visualguide.com/assets/img/planets/${theid}.jpg`;
-	  } else if (type === "vehicle") {
-		selectedItem = store.vehicles.find((vehicle) => vehicle.uid === theid);
-		image = `https://starwars-visualguide.com/assets/img/vehicles/${theid}.jpg`;
+		const fetchData = async () => {
+		  let data = null;
+		  let image;
+	
+		  if (type === "character") {
+			data = await actions.loadSingleChar(theid);
+			image = `https://starwars-visualguide.com/assets/img/characters/${theid}.jpg`;
+		  } else if (type === "planet") {
+			data = await actions.loadSinglePlanet(theid);
+			image = `https://starwars-visualguide.com/assets/img/planets/${theid}.jpg`;
+		  } else if (type === "vehicle") {
+			data = await actions.loadSingleVehicle(theid);
+			image = `https://starwars-visualguide.com/assets/img/vehicles/${theid}.jpg`;
+		  }
+	
+		  if (data) {
+			setItem(data);
+			setImageUrl(image);
+		  }
+		};
+	
+		fetchData();
+	  }, []);
+	
+	  if (!item) {
+		return <div>Loading...</div>;
 	  }
-  
-	  setItem(selectedItem);
-	  setImageUrl(image);
-	}, [type, theid, store.chars, store.planets, store.vehicles]);
-  
-	if (!item) {
-	  return <div>Loading...</div>;
-	}
-  
-	return (
-	  <div className="single">
-		<img src={imageUrl} alt={item.name} />
-		<h1>{item.name}</h1>
-		<p>UID: {item.uid}</p>
-		{/* Añadir más detalles del item según sea necesario */}
-	  </div>
-	);
-  };
+	
+	  return (
+		<div className="card">
+		  <div className="single">
+			<img src={imageUrl} alt={item.properties.name} />
+			<h1>{item.properties.name}</h1>
+			<p>Gender {item.properties.gender}</p>
+			<p>Description: {item.description}</p>
+			{/* Añadir más detalles */}
+		  </div>
+		</div>  
+	  );
+	};
   

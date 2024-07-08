@@ -29,4 +29,16 @@
   margin-bottom: 3px;
 }
 
+.pie{
+  display: flexbox;
+}
+
+.pie i{
+  size: 20px;
+}
+
+
+
+
+
 

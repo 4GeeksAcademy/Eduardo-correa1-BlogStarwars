@@ -16,7 +16,7 @@ const imagecharacters = {
   10: "https://starwars-visualguide.com/assets/img/characters/10.jpg",
 };
 const imageplanets = {
-  1: "https://starwars-visualguide.com/assets/img/planets/12.jpg",
+  1: "https://starwars-visualguide.com/assets/img/planets/16.jpg",
   2: "https://starwars-visualguide.com/assets/img/planets/2.jpg",
   3: "https://starwars-visualguide.com/assets/img/planets/3.jpg",
   4: "https://starwars-visualguide.com/assets/img/planets/4.jpg",
