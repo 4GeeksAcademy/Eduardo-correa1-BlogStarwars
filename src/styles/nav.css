@@ -2,3 +2,25 @@ img{
     width: 100px;
 }
 
+.btn{
+    color: rgb(99, 97, 97);
+    background-color: gainsboro
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       singleChar: null,
       singlePlanet: null,
       singleVehicle: null,
+      favorites:[]
     },
     actions: {
       loadChars: async () => {
@@ -65,7 +66,20 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.error("Error fetching the data", error);
         }
+      },
+      //-------------------------fav
+      addFavorite: (item) => {
+        const store = getStore();
+        const uniqueId = `${item.type}-${item.uid}`;
+        if (!store.favorites.find(fav => fav.uniqueId === uniqueId)) {
+          setStore({ favorites: [...store.favorites, { ...item, uniqueId }] });
+        }
+      },
+      removeFavorite: (uniqueId) => {
+        const store = getStore();
+        setStore({ favorites: store.favorites.filter(fav => fav.uniqueId !== uniqueId) });
       }
+      //-------------------------fav
     },
   };
 };
