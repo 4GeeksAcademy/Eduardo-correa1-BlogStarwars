@@ -46,9 +46,14 @@
 }
 
 .single-detail {
-	background-color: #FFF;
+	background-color: #bebcbc;
 	padding: 10px;
 	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(240, 13, 13, 0.932);
 	font-size: 0.9em;
+}
+
+.single-details {
+    display: flex;
+    flex-direction: column;
 }
