@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
           const response = await fetch("https://www.swapi.tech/api/people/");
           const data = await response.json();
-          setStore({ chars: data.results });          
+          setStore({ chars: data.results });
+                   
         } catch (error) {
           console.error("Error fetching the data", error);
         }
@@ -32,7 +33,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
           const response = await fetch("https://www.swapi.tech/api/vehicles/");
           const data = await response.json();
-          setStore({ vehicles: data.results });          
+          setStore({ vehicles: data.results });
+          
         } catch (error) {
           console.error("Error fetching the data", error);
         }
@@ -41,7 +43,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
           const response = await fetch(`https://www.swapi.tech/api/people/${id}`);
           const data = await response.json();
-          setStore({ singleChar: data.result });           
+          setStore({ singleChar: data.result });
+                    
           return data.result;
         } catch (error) {
           console.error("Error fetching the data", error);
@@ -51,7 +54,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
           const response = await fetch(`https://www.swapi.tech/api/planets/${id}`);
           const data = await response.json();
-          setStore({ singlePlanet: data.result });           
+          setStore({ singlePlanet: data.result });
+                 
           return data.result;
         } catch (error) {
           console.error("Error fetching the data", error);
@@ -61,7 +65,8 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
           const response = await fetch(`https://www.swapi.tech/api/vehicles/${id}`);
           const data = await response.json();
-          setStore({ singleVehicle: data.result });          
+          setStore({ singleVehicle: data.result });
+                   
           return data.result;
         } catch (error) {
           console.error("Error fetching the data", error);

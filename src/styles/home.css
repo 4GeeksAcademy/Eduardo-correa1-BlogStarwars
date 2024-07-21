@@ -9,10 +9,10 @@ body {
 
 
 .fa-solid.fa-heart {
-    color: #c49706;
+    color: #f7bf07d2;
     
 }
 
 .fa-regular.fa-heart {
-    color: #999999; /* Color gris para el corazón no marcado como favorito */
+    color: #1b1b1b;
 }
